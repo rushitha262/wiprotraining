@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        // Using default constructor
+        Constructor cuboid1 = new Constructor();
+        System.out.println("Constructor without parameter");
+        cuboid1.calculateVolume();
+
+        // Input for parameterized constructor
+        int length = s.nextInt();
+        int breadth = s.nextInt();
+        int height = s.nextInt();
+
+        // Using parameterized constructor
+        Constructor cuboid2 = new Constructor(length, breadth, height);
+        System.out.println("Constructor with parameter");
+        cuboid2.calculateVolume();
+    }
+}
+
+// Class to represent the Cuboid
+class Constructor {
+    int length;
+    int breadth;
+    int height;
+
+    // Default constructor
+    public Constructor() {
+        this.length = 10;
+        this.breadth = 10;
+        this.height = 10;
+    }
+
+    // Parameterized constructor
+    public Constructor(int length, int breadth, int height) {
+        this.length = length;
+        this.breadth = breadth;
+        this.height = height;
+    }
+
+    // Method to calculate and print volume
+    public void calculateVolume() {
+        double volume = length * breadth * height;
+        System.out.println("Volume is " + volume);
+    }
+}
+Comment:
+

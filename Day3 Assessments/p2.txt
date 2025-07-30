@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+
+    // Recursive method to calculate sum of digits
+    public static int sumOfDigits(int num) {
+        num = Math.abs(num); // Handle negative numbers
+        if (num == 0) {
+            return 0;
+        }
+        return (num % 10) + sumOfDigits(num / 10);
+    }
+
+    public static void main(String[] args) {
+        // Scanner to read input from user
+        Scanner scanner = new Scanner(System.in);
+
+        int input = scanner.nextInt();          // Read input number
+        int result = sumOfDigits(input);        // Get sum of digits
+        System.out.println(result);             // Output the result
+
+        scanner.close();                        // Close the scanner
+    }
+}
