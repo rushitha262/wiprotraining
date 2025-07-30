@@ -1,0 +1,66 @@
+Equal character in string
+You are given a string s. In one move you can change any character to another character.
+
+You have to make a string which consists of the same character. Find the minimum move to do this task.
+
+Constraints:
+
+1 <= s.length <= 1000
+
+s consists only of lowercase characters .
+
+Input Format
+
+First line contains string s.
+
+Output format 
+
+Print the minimum move to this task.
+
+ Input
+
+aabbbcccc
+
+output
+
+5
+
+Explanation
+
+Since  character ‘c’ has maximum frequency in string s.
+
+So we will make all other character to ‘c’so the minimum move is 5 (convert 2 ‘a’ into ‘c’ and 3 ‘b’into ‘c’).
+
+
+
+Your answer
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Read the input string from the user
+        String s = input.nextLine();
+
+        int[] freq = new int[26]; // For characters 'a' to 'z'
+
+        // Count frequency of each character in the string
+        for (int i = 0; i < s.length(); i++) {
+            freq[s.charAt(i) - 'a']++;
+        }
+
+        // Find the maximum frequency among all characters
+        int maxFreq = 0;
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] > maxFreq) {
+                maxFreq = freq[i];
+            }
+        }
+
+        // Calculate and print the minimum number of moves
+        int minMoves = s.length() - maxFreq;
+        System.out.println(minMoves);
+    }
+}
