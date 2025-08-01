@@ -32,9 +32,9 @@ public class InstanceOfExample {
 		Persons p = new Student();
 		
 		
-		if(p instanceof Emp)
+		if(p instanceof Employee)
 		{
-			Emp e = (Emp)p; // safe downcast
+			Employee e = (Employee)p; // safe downcast
 			e.action();
 		}
 		
