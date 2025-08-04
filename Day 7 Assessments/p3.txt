@@ -4,12 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        String text = s.nextLine();
-
-        System.out.println("Original string: " + text);
 
         try {
-            checkVowels(text);
+            String text = s.nextLine(); 
+            System.out.println("Original string: " + text);
+            checkVowels(text); 
             System.out.println("String contains vowels");
         } catch (NoVowelsException e) {
             System.out.println("String does not contain any vowels");
@@ -18,9 +17,19 @@ public class Main {
         s.close();
     }
 
+
     public static void checkVowels(String text) throws NoVowelsException {
-        if (!text.toLowerCase().matches(".[aeiou].")) {
-            throw new NoVowelsException();
+        boolean hasVowel = false;
+        for (int i = 0; i < text.length(); i++) {
+            char ch = Character.toLowerCase(text.charAt(i));
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                hasVowel = true;
+                break;
+            }
+        }
+
+        if (!hasVowel) {
+            throw new NoVowelsException(); 
         }
     }
 }
@@ -28,5 +37,5 @@ public class Main {
 class NoVowelsException extends Exception {
     public NoVowelsException() {
         super();
-    }
+        }
 }
