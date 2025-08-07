@@ -446,3 +446,17 @@ create table student (id int auto_increment primary key, name varchar(100), age 
 
 select * from student;
 drop table student;
+
+UPDATE student
+SET name = 'sri', age = 23
+WHERE id = 2;
+
+DELETE FROM student
+WHERE id = 3;
+
+SELECT * FROM student
+WHERE id = 4;
+
+create table userlogin(username varchar(50), password varchar(20));
+select * from userlogin;
+insert into userlogin value ("rushitha","1234567");
