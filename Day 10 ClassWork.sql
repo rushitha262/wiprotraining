@@ -460,3 +460,25 @@ WHERE id = 4;
 create table userlogin(username varchar(50), password varchar(20));
 select * from userlogin;
 insert into userlogin value ("rushitha","1234567");
+
+create table student (id int auto_increment primary key, name varchar(100), age int);
+select * from student;
+drop table student;
+-- Error Code: 1064. You have an error in your SQL syntax; 
+-- check the manual that corresponds to your MySQL server version 
+
+-- for the right syntax to use near '' at line 3
+
+DELIMITER $$
+
+CREATE PROCEDURE insert_user(IN sname varchar(20) , sage int)
+BEGIN
+	insert into student(name , age) values (sname , sage);
+    select * from student;
+END $$
+
+DELIMITER ;
+
+call  insert_user("Jiya",45);
+
+select * from student;
