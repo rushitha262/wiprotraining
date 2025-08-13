@@ -13,7 +13,7 @@ header {
     text-align: center;
 }
 .logo {
-    height: 50px; /* adjust size */
+    height: 50px;
     width: auto;
 }
 /* Navigation bar */
@@ -37,10 +37,10 @@ main {
     padding: 20px;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically if height set */
-    min-height: calc(100vh - 150px); /* Leave space for header */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: calc(100vh - 150px); 
 }
 
 /* Form alignment */
@@ -49,9 +49,9 @@ form {
     background: rgba(255,255,255,0.9);
     padding: 20px;
     border-radius: 8px;
-    text-align: left; /* Keep labels aligned left */
+    text-align: left; 
     width: 100%;
-    max-width: 400px; /* Fixed width for better look */
+    max-width: 400px; 
 }
 
 form label {
