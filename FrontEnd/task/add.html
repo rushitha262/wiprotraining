@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add / Edit Item</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Food to Enjoy</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="add.html">Add Item</a>
+        <a href="view.html">View Items</a>
+    </nav>
+</header>
+
+<main>
+    <h2 id="form-title">Add Item</h2>
+    <form id="itemForm">
+        <label>Item Name:</label>
+        <input type="text" id="name" required>
+         <label>Description:</label>
+        <input type="text" id="name" required>
+        <label>Price:</label>
+        <input type="number" id="price" required>
+
+        <label>Category:</label>
+        <input type="text" id="category" required>
+
+        <label>Availability:</label>
+        <select id="availability">
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+
+        <button type="submit">Save Item</button>
+    </form>
+</main>
+<footer>
+    <p>© 2025 Food to Enjoy Restaurant. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    // Check if we are editing
+    const editIndex = localStorage.getItem('editIndex');
+    if (editIndex !== null) {
+        const items = JSON.parse(localStorage.getItem('menuItems')) || [];
+        const item = items[editIndex];
+        if (item) {
+            document.getElementById('name').value = item.name;
+            document.getElementById('price').value = item.price;
+            document.getElementById('category').value = item.category;
+            document.getElementById('availability').value = item.availability;
+            document.getElementById('form-title').innerText = 'Edit Item';
+        }
+    }
+
+    document.getElementById('itemForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const price = document.getElementById('price').value;
+        const category = document.getElementById('category').value;
+        const availability = document.getElementById('availability').value;
+
+        let items = JSON.parse(localStorage.getItem('menuItems')) || [];
+
+        if (editIndex !== null) {
+            items[editIndex] = { name, price, category, availability };
+            localStorage.removeItem('editIndex');
+            alert('Item updated successfully!');
+        } else {
+            items.push({ name, price, category, availability });
+            alert('Item added successfully!');
+        }
+
+        localStorage.setItem('menuItems', JSON.stringify(items));
+        window.location.href = 'view.html';
+    });
+</script>
+
+</body>
+</html>

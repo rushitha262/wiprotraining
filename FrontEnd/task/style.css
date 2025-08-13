@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('images/img.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+.logo {
+    height: 50px; /* adjust size */
+    width: auto;
+}
+/* Navigation bar */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main container - center everything */
+main {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically if height set */
+    min-height: calc(100vh - 150px); /* Leave space for header */
+}
+
+/* Form alignment */
+form {
+    display: inline-block;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left; /* Keep labels aligned left */
+    width: 100%;
+    max-width: 400px; /* Fixed width for better look */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, 
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.9);
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 12px;
+    color: white;
+    font-size: 0.9rem;
+}

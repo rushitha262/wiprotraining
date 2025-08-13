@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu Management</title>
+<link rel="stylesheet" href="Task.css">
+</head>
+<body>
+
+<header>
+    <span class="header-title">🍽 Restaurant Menu Management</span>
+    <nav class="header-buttons">
+        <button type="button" onclick="location.href='home.html'">Home</button>
+        <button type="button" onclick="document.getElementById('menuForm').scrollIntoView();">Add Item</button>
+        <button type="button" onclick="location.href='orders.html'">View Orders</button>
+        <button type="button" onclick="alert('Logging out...')">Logout</button>
+    </nav>
+</header>
+
+<div class="container">
+    <form id="menuForm">
+        <input type="hidden" id="editIndex" value="">
+        <input type="text" id="itemName" placeholder="Item Name" required>
+        <textarea id="itemDesc" placeholder="Description" required></textarea>
+        <select id="itemCategory" required>
+            <option value="">Category</option>
+            <option value="Veg">Veg</option>
+            <option value="Non Veg">Non Veg</option>
+        </select>
+        <input type="number" id="itemPrice" placeholder="Price" min="0" step="0.01" required>
+        <select id="itemAvailability" required>
+            <option value="">Availability</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+        <button type="submit">Add Item</button>
+    </form>
+</div>
+
+<script src="Task.js"></script>
+</body>
+</html>

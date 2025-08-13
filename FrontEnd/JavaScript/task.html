@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List & Calculator</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        input, button, select { margin: 5px; padding: 5px; }
+        ul { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="timezone" style="font-weight:bold; margin-bottom:15px;"></div>
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Task or Index to Remove">
+    <button id="addTaskBtn">Add Task</button>
+    <button id="removeTaskBtn">Remove Task</button>
+    <button id="showTasksBtn">Display Tasks</button>
+    <ul id="taskList"></ul>
+    <hr>
+    <h2>Calculator</h2>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <select id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+    </select>
+    <button id="calcBtn">Calculate</button>
+    <span id="calcResult"></span>
+    <script src="task.js"></script>
+</body>
+</html>

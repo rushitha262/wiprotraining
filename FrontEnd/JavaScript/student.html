@@ -5,26 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Report Card</title>
 
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
- 
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styling */
+        .text-brown {
+            color: #4b3832;
+        }
+        .card {
+            border-radius: 20px;
+        }
+        nav .nav-link:hover {
+            /* Remove background and add text highlight */
+            background-color: transparent;
+            color: #007bff !important; /* Highlight color */
+            text-decoration: underline;
+            font-weight: bold;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+    </style>
 </head>
 <body class="bg-info-subtle">
 
-<div class="container mt-5">
-    <h1 class="text-center text-brown mb-4">Student Report Card</h1>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-3">
+        <div id="timer" style="font-size:1.2rem; font-weight:bold;"></div>
+        <h1>School Management System</h1>
+        <p>Student Report Card System</p>
+    </header>
 
-    <div class="card shadow p-4">
-        <form id="reportForm">
-            <div id="subjectsContainer"></div>
-            <button type="submit" class="btn btn-outline-secondary mt-3">Generate Report</button>
-        </form>
-    </div>
-</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">School Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Content -->
+    <main class="container mt-5">
+        <div class="row align-items-center">
+            <!-- Form section -->
+            <div class="col-md-8">
+                <h2 class="text-brown mb-4">Enter Student Marks</h2>
+                <div class="card shadow p-4">
+                    <form id="reportForm">
+                        <div id="subjectsContainer"></div>
+                        <button type="submit" class="btn btn-outline-secondary mt-3">Generate Report</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Image section -->
+            <div class="col-md-4 d-flex align-items-center justify-content-center" style="min-height: 350px;">
+                <img src="images/img.jpg" alt="School" class="img-fluid rounded shadow" style="max-height: 250px;">
+            </div>
+        </div>
+    </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-<script src="studentreport.js"></script>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        &copy; 2025 My School. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Student Report JS -->
+    <script src="student.js"></script>
+    <!-- Timer Script -->
+    <script>
+        // Countdown timer script
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+            }, 1000);
+        }
+
+        // Initialize timer for 2 hours (7200 seconds)
+        window.onload = function () {
+            let twoHours = 60 * 60 * 2,
+                display = document.querySelector('#timer');
+            startTimer(twoHours, display);
+        };
+    </script>
 </body>
 </html>
