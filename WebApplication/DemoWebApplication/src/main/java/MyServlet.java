@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -11,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MyServlet
+ * Servlet implementation class FirstServlet
  */
 @WebServlet("/wipro.com")
 public class MyServlet extends HttpServlet {
@@ -28,8 +26,14 @@ public class MyServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		PrintWriter pw = response.getWriter();
+//		String username = request.getParameter("txt1");
+//		String password = request.getParameter("txt2");
+//		
+//		if(username.equals("Admin") && password.equals("admin123")) {
+//			pw.println("Welcome");
+//		}
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -37,23 +41,23 @@ public class MyServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+//		doGet(request, response);
+		PrintWriter pw = response.getWriter();
+		String username = request.getParameter("txt1");
+		String password = request.getParameter("txt2");
+						
 		
-		PrintWriter pw=response.getWriter();
-		String username=request.getParameter("txt1");
-		String password=request.getParameter("txt2");
-		
-		
-		if(username.equals("Admin") && password.equals("Admin123"))
-		{
+		if(username.equals("Admin") && password.equals("admin123")) {
 			pw.println("Welcome");
+//			if you want to dispatch the request to another html page or servvlet
+			RequestDispatcher rd = request.getRequestDispatcher("/restaurant.jsp");
+			rd.forward(request, response);
+		}
+		else {
+			RequestDispatcher rd = request.getRequestDispatcher("/error.html");
+			rd.forward(request, response);
 			
-			//RequestDispatcher rd=request.getRequestDispatcher("restaurant.html");
 		}
-		else
-		{
-			pw.println("Bad Request");
-		}
-		doGet(request, response);
 	}
 
 }
