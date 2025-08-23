@@ -538,7 +538,7 @@ create index idx_cityname on customers(city,name);
 use wiprotraining;
 CREATE DATABASE wiprojdbc;
 USE wiprojdbc;
-
+create table Student;
 CREATE TABLE student (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
@@ -546,11 +546,17 @@ CREATE TABLE student (
     email VARCHAR(50)
 );
 
-drop table student;
+drop table student1;
 INSERT INTO student (id, name, email)
 VALUES (101,'Rushitha','rushi@gmail.com');
 
 SELECT * FROM wiprojdbc.student;
+
+
+create database users;
+create database student1;
+select * from wiprojdbc.users;
+
 
 
 

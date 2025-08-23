@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Mani Wipro Training\Rushitha1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1573210547.index
+1549304585.index
+2866443569.index
+2643569412.index
+2215581745.index
+2105242303.index
+3621972498.index
